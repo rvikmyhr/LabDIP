@@ -14,8 +14,8 @@ public class HRService {
      * various employee types. Is this the best way to go? Do we have
      * type safety?
      */
-    public static final String SALARIED_TYPE = "Salaried";
-    public static final String HOURLY_TYPE = "Hourly";
+//    public static final String SALARIED_TYPE = "Salaried";
+//    public static final String HOURLY_TYPE = "Hourly";
 
     /**
      * Alternatively to the above, we could use an enum. Does this improve
@@ -38,27 +38,10 @@ public class HRService {
      * Are there other options? Hint: enum
      * @return the annual compensation for supported employee types
      */
-    public double getAnnualCompensationForEmployee(Employee e,
-            String employeeType)
+    public double getAnnualCompensationForEmployee(Employee e)
     {
-        double annualCompensation = 0;
-
-        // One example of using fragile if logic to determine employee type.
-        // If only we could use polymorphism instead!
-        if(employeeType.equals(HOURLY_TYPE)) {
-            annualCompensation = e.getAnnualWages();
-
-        } else if(employeeType.equals(SALARIED_TYPE)) {
-            annualCompensation = e.getAnnualSalary();
-
-        } else {
-            JOptionPane.showMessageDialog(
-                    null, ERROR_MSG, ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
-        }
-
-        return annualCompensation;
+        return e.getAnnualWages();
     }
-
 
     /**
      * This is another truly horrible way to make decisions.
@@ -66,24 +49,24 @@ public class HRService {
      * @param e - an employee object (not truly polymorphic!)
      * @return the annual compensation for supported employee types
      */
-    public double getAnnualCompensationForEmployee(Employee e) {
-        double annualCompensation = 0;
-
-        // One example of using fragile if logic to determine employee type.
-        // If only we could use polymorphism!
-        // NOTE: you don't need both versions (the one above and this one).
-        // Find a single, better way, using DIP principles.
-        if(e instanceof HourlyEmployee) {
-            annualCompensation = e.getAnnualWages();
-
-        } else if(e instanceof SalariedEmployee) {
-            annualCompensation = e.getAnnualSalary();
-
-        } else {
-            JOptionPane.showMessageDialog(
-                    null, ERROR_MSG, ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
-        }
-
-        return annualCompensation;
-    }
+//    public double getAnnualCompensationForEmployee(Employee e) {
+//        double annualCompensation = 0;
+//
+//        // One example of using fragile if logic to determine employee type.
+//        // If only we could use polymorphism!
+//        // NOTE: you don't need both versions (the one above and this one).
+//        // Find a single, better way, using DIP principles.
+//        if(e instanceof HourlyEmployee) {
+//            annualCompensation = e.getAnnualWages();
+//
+//        } else if(e instanceof SalariedEmployee) {
+//            annualCompensation = e.getAnnualSalary();
+//
+//        } else {
+//            JOptionPane.showMessageDialog(
+//                    null, ERROR_MSG, ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
+//        }
+//
+//        return annualCompensation;
+//    }
 }
