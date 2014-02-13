@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package dip.lab2;
+package dip.lab3;
 
 /**
  *
  * @author Ron
  */
-public interface TipCalculator {
-    public abstract double getTip();
+public interface InputMethod {
+    public abstract String inputMessage();
 }

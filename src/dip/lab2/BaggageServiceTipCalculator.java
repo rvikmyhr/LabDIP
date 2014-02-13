@@ -51,13 +51,11 @@ public class BaggageServiceTipCalculator implements TipCalculator {
             return tip;
         }
 
-    @Override
         public final void setServiceRating(ServiceQuality q) {
             // No need to validate because enums provide type safety!
             serviceQuality = q;
         }
 
-    @Override
         public ServiceQuality getServiceQuality() {
             return serviceQuality;
         }
