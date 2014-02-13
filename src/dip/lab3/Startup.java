@@ -13,7 +13,10 @@ package dip.lab3;
 public class Startup {
     
     public static void main(String[] args) {
-        
+        InputMethod input1 = new ConsoleInput();
+        OutputMethod output1 = new ConsoleOutput();
+        MessageService message = new MessageService(input1, output1);
+        message.displayMessage();
         
     }
 }

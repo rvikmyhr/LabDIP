@@ -11,5 +11,15 @@ package dip.lab3;
  * @author Ron
  */
 public class MessageService {
+    private InputMethod input;
+    private OutputMethod output;
     
+    public MessageService(InputMethod input, OutputMethod output){
+        this.input = input;
+        this.output = output;
+    }
+    
+    public void displayMessage(){
+        output.outputMessage(input);   
+    }
 }
