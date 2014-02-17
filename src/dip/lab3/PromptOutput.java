@@ -6,10 +6,17 @@
 
 package dip.lab3;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Ron
  */
-public class PromptOutput {
+public class PromptOutput implements OutputMethod {
+    
+    @Override
+    public void outputMessage(InputMethod input){
+        JOptionPane.showMessageDialog(null, input.inputMessage());
+    }
     
 }

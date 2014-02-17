@@ -12,6 +12,7 @@ package dip.lab3;
  */
 public class ConsoleOutput implements OutputMethod {
     
+    @Override
     public void outputMessage(InputMethod input){
         System.out.println(input.inputMessage());
     }

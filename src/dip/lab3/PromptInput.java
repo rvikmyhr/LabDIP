@@ -6,7 +6,17 @@
 
 package dip.lab3;
 
+import javax.swing.JOptionPane;
 
-public class PromptInput {
+
+public class PromptInput implements InputMethod {
+    
+    private String message;
+    
+    @Override
+    public String inputMessage(){
+        message = JOptionPane.showInputDialog("Enter Message");
+        return message;
+    }
     
 }

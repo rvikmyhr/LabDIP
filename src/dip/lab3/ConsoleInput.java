@@ -17,6 +17,7 @@ public class ConsoleInput implements InputMethod {
     private Scanner askInput = new Scanner(System.in);
     private String message;
     
+    @Override
     public String inputMessage(){
         System.out.println("Enter message");
         message = askInput.nextLine();
